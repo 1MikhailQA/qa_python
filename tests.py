@@ -42,10 +42,10 @@ class TestBooksCollector(unittest.TestCase):
     def test_get_books_with_specific_genre_invalid_genre(self):
         self.assertEqual(self.collector.get_books_with_specific_genre("InvalidGenre"), [])
 
-    def test_get_books_for_children_no_books(self):
+    def test_get_books_for_children_with_books(self):
         self.collector.add_new_book("Book6")
-        self.collector.set_book_genre("Book6", "Детективы")
-        self.assertEqual(self.collector.get_books_for_children(), [])
+        self.collector.set_book_genre("Book6", "Комедии")
+        self.assertEqual(self.collector.get_books_for_children(), ["Book6"])
 
 
 if __name__ == "__main__":
